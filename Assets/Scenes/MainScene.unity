@@ -2394,6 +2394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controls: 1
+  Animator: {fileID: 1132388890}
   movementSpeed: 0.01
 --- !u!212 &1132388887
 SpriteRenderer:
@@ -2561,6 +2562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controls: 0
+  Animator: {fileID: 1134338647}
   movementSpeed: 0.01
 --- !u!212 &1134338644
 SpriteRenderer:
