@@ -7,13 +7,15 @@ public class EnemySpawner : MonoBehaviour
     public GameObject[] enemies;
     public Transform[] spawnPoints;
 
+    public GameObject coin;
+    public Transform[] coinPoints;
+
     private float timeStart = 0;
     public float timeLim;
 
     void Start()
     {
-        Invoke("SpawnEnemyTop", 1f);
-        Invoke("SpawnEnemyBot", 1f);
+
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class EnemySpawner : MonoBehaviour
         {
             Invoke("SpawnEnemyTop", 1f);
             Invoke("SpawnEnemyBot", 1f);
+            Invoke("SpawnCoin", 1f);
             timeStart = 0;
         }
     }
@@ -42,5 +45,11 @@ public class EnemySpawner : MonoBehaviour
         int spawnIndexB = Random.Range(3, spawnPoints.Length);
             Instantiate(enemies[enemyIndex], spawnPoints[spawnIndexB].position, Quaternion.identity, spawnPoints[spawnIndexB]);
             transform.localPosition = Vector3.zero;  
+    }
+    public void SpawnCoin()
+    {
+        int spawnIndexC = Random.Range(0, coinPoints.Length);
+        Instantiate(coin, coinPoints[spawnIndexC].position, Quaternion.identity, coinPoints[spawnIndexC]);
+        transform.localPosition = Vector3.zero;
     }
 }
