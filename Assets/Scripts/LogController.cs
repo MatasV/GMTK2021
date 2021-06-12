@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LogController : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class LogController : MonoBehaviour
 
     public bool invincible;
     public int lives = 2;
+
+    public Image[] heartRenderers;
+    public Sprite emptyHeartSprite;
     
     private void Update()
     {
@@ -69,11 +73,27 @@ public class LogController : MonoBehaviour
     {
         //change sprite
         if (invincible) return;
-        if (lives == 0) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         lives--;
+        heartRenderers[0].color = new Color(1, 1, 1, 1);
+        heartRenderers[1].color = new Color(1, 1, 1, 1);
+        heartRenderers[1].sprite = emptyHeartSprite;
+        if (lives == 0) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         fadeLoopCount = 0;
         StartCoroutine("FadeImage", true);
+        StartCoroutine("FadeHearts", 3f);
         invincible = true;
+    }
+
+    IEnumerator FadeHearts(float timer)
+    {
+        yield return new WaitForSeconds(timer);
+        for (float i = 1; i >= 0; i -= Time.deltaTime)
+        {
+            // set color with i as alpha
+            heartRenderers[0].color = new Color(1, 1, 1, i);
+            heartRenderers[1].color = new Color(1, 1, 1, i);
+            yield return null;
+        }
     }
     
     IEnumerator FadeImage(bool fadeAway)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -19,5 +20,11 @@ public class ScoreTracker : MonoBehaviour
         {
             text.text = Score.bottomScore.ToString();
         }
+    }
+
+    private void Start()
+    {
+        Score.topScore = 0;
+        Score.bottomScore = 0;
     }
 }

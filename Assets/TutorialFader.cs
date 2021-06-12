@@ -28,7 +28,7 @@ public class TutorialFader : MonoBehaviour
                     for (float i = 1; i >= 0; i -= Time.deltaTime)
                     {
                         // set color with i as alpha
-                        img.color = new Color(1, 1, 1, i);
+                        img.color = new Color(1, 1, 1,  i -0.01f);
                         yield return null;
                     }
                 }

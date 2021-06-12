@@ -43,7 +43,6 @@ public class LineRendererController : MonoBehaviour
         Vector3 startPos = sprite.transform.localPosition; 
         
         if (distance > (maxLength+4)/2) {
-            Debug.Log("Shaking");
             Vector3 shakeAmount = new Vector3(
                 Mathf.PerlinNoise(currentX, 0) - .3f,
                 Mathf.PerlinNoise(currentX, 7) - .3f,
