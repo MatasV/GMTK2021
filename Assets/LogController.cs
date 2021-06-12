@@ -12,9 +12,13 @@ public class LogController : MonoBehaviour
     public float yMin;
 
     public float movementSpeed;
-    
+
+    public SharedBool isMaximumDistanceReached;
+
+    public bool isTop;
     private void Update()
     {
+        
         if (playerPosition.localPosition.x < 0 && transform.rotation.z < maxZRotation)
         {
             transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z + Math.Abs(playerPosition.localPosition.x * 3f));
@@ -23,13 +27,26 @@ public class LogController : MonoBehaviour
             transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z - Math.Abs(playerPosition.localPosition.x * 3f));
         }
         
-        if (playerPosition.localPosition.x < 0 && transform.position.y < yMax)
+        if (playerPosition.localPosition.x < 0 && transform.position.y < yMax )
         {
-            transform.position += Vector3.up * Math.Abs(playerPosition.localPosition.x) * movementSpeed;
+            if (isMaximumDistanceReached.Value)
+            {
+                if (!isTop)
+                    transform.position += Vector3.up * Math.Abs(playerPosition.localPosition.x) * movementSpeed;
+            }
+            else transform.position += Vector3.up * Math.Abs(playerPosition.localPosition.x) * movementSpeed;
 
         } else if (playerPosition.localPosition.x > 0 && transform.position.y > yMin)
         {
-            transform.position += Vector3.down * Math.Abs(playerPosition.localPosition.x) * movementSpeed;
+            if (isMaximumDistanceReached.Value)
+            {
+                if (isTop)
+                    transform.position += Vector3.down * Math.Abs(playerPosition.localPosition.x) * movementSpeed;
+            }
+            else
+            {
+                transform.position += Vector3.down * Math.Abs(playerPosition.localPosition.x) * movementSpeed;
+            }
         }
         
         
