@@ -7,7 +7,7 @@ public class GrassMover : MonoBehaviour
     Material mat;
     Vector2 offset;
 
-    public int xVel;
+    public float xVel;
     private int yVel;
 
     void Start()
