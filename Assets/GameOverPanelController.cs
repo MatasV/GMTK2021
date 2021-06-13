@@ -35,6 +35,7 @@ public class GameOverPanelController : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        FindObjectOfType<AudioManager>().Play("Play");
     }
     
 }
