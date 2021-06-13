@@ -18,6 +18,7 @@ public class GameOverPanelController : MonoBehaviour
 
     public void GameOver(bool topDied)
     {
+        FindObjectOfType<AudioManager>().Play("GameOver");
         Time.timeScale = 0;
         panel.transform.DOMoveY(384, 0.5f, true);
         panel.SetActive(true);
