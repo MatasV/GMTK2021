@@ -8,13 +8,16 @@ public class EnvironmentSpawner : MonoBehaviour
 {
     public Transform topSpawn;
     public Transform bottomSpawn;
+    public Transform lineSpawn;
 
     public GameObject sparkles;
     public GameObject fish;
+    public GameObject grass;
     private void Start()
     {
         InvokeRepeating("SpawnRipples", 0.5f, 1.5f);
         InvokeRepeating("SpawnFish", 8f, 10f);
+        InvokeRepeating("SpawnGrass", 0f, 2f);
     }
 
     private void SpawnFish()
@@ -52,5 +55,11 @@ public class EnvironmentSpawner : MonoBehaviour
             topSparkle.transform.position.z + Random.Range(-3, 3));
 
         topSparkle.transform.localScale *= Random.Range(0.8f, 1.3f);
+    }
+
+    private void SpawnGrass()
+    {
+        var grassLine = Instantiate(grass, lineSpawn.position, Quaternion.identity, lineSpawn);
+        transform.localPosition = Vector3.zero;
     }
 }

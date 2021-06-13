@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnvironmentObjectMover : MonoBehaviour
 {
-    public float speed;
+    public float speed, destroyTime;
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("Destroy", 30f);
+        Invoke("Destroy", destroyTime);
     }
 
     // Update is called once per frame
