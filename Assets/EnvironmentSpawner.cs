@@ -28,17 +28,17 @@ public class EnvironmentSpawner : MonoBehaviour
         if (topOrBottom == 0)
         {
             var fishy = Instantiate(underwater[Random.Range(0, underwater.Length)], topSpawn.position, Quaternion.identity);
-            fishy.transform.position = new Vector3(fishy.transform.position.x + Random.Range(-3, 3),
+            fishy.transform.position = new Vector3(fishy.transform.position.x ,
                 fishy.transform.position.y + Random.Range(-3, 3),
-                fishy.transform.position.z + Random.Range(-3, 3));
+                fishy.transform.position.z);
         }
         else
         {
             var fishy = Instantiate(underwater[Random.Range(0, underwater.Length)], bottomSpawn.position, Quaternion.identity);
             
-            fishy.transform.position = new Vector3(fishy.transform.position.x + Random.Range(-3, 3),
+            fishy.transform.position = new Vector3(fishy.transform.position.x ,
                 fishy.transform.position.y + Random.Range(-3, 3),
-                fishy.transform.position.z + Random.Range(-3, 3));
+                fishy.transform.position.z );
         }
     }
     private void SpawnRipples()
