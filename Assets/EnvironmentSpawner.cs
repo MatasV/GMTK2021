@@ -13,11 +13,13 @@ public class EnvironmentSpawner : MonoBehaviour
     public GameObject sparkles;
     public GameObject fish;
     public GameObject grass;
+
+    public float grassSpawnRate;
     private void Start()
     {
         InvokeRepeating("SpawnRipples", 0.5f, 1.5f);
         InvokeRepeating("SpawnFish", 8f, 10f);
-        InvokeRepeating("SpawnGrass", 0f, 2f);
+        InvokeRepeating("SpawnGrass", 0f, grassSpawnRate);
     }
 
     private void SpawnFish()

@@ -16,6 +16,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame

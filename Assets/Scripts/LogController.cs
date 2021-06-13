@@ -27,10 +27,11 @@ public class LogController : MonoBehaviour
 
     public Image[] heartRenderers;
     public Sprite emptyHeartSprite;
+
+    public ParticleSystem particles;
     
     private void Update()
     {
-        
         if (playerPosition.localPosition.x < 0 && transform.rotation.z < maxZRotation)
         {
             transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z + Math.Abs(playerPosition.localPosition.x * 3f));
@@ -60,8 +61,6 @@ public class LogController : MonoBehaviour
                 transform.position += Vector3.down * Math.Abs(playerPosition.localPosition.x) * movementSpeed;
             }
         }
-        
-        
     }
 
     private void Start()
@@ -73,6 +72,7 @@ public class LogController : MonoBehaviour
     {
         //change sprite
         if (invincible) return;
+        particles.Play();
         lives--;
         heartRenderers[0].color = new Color(1, 1, 1, 1);
         heartRenderers[1].color = new Color(1, 1, 1, 1);
