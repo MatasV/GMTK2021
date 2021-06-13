@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13954,7 +13954,9 @@ MonoBehaviour:
   bottomSpawn: {fileID: 953397625}
   lineSpawn: {fileID: 832969919}
   sparkles: {fileID: 8910422459482632548, guid: 7c13f03186e01f04b91b1fc778415090, type: 3}
-  fish: {fileID: 5059562209708344323, guid: 5f27ae9e8737144448672213d91f4bd4, type: 3}
+  underwater:
+  - {fileID: 5059562209708344323, guid: 5f27ae9e8737144448672213d91f4bd4, type: 3}
+  - {fileID: 5059562209708344323, guid: c1044efefc7eb78498b3441759da5381, type: 3}
   grass: {fileID: 2577660271183324791, guid: 8b502ab45aac3194a8a79adbed427682, type: 3}
   grassSpawnRate: 4
 --- !u!4 &1145512517

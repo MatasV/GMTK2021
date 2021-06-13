@@ -11,7 +11,7 @@ public class EnvironmentSpawner : MonoBehaviour
     public Transform lineSpawn;
 
     public GameObject sparkles;
-    public GameObject fish;
+    public GameObject[] underwater;
     public GameObject grass;
 
     public float grassSpawnRate;
@@ -27,14 +27,14 @@ public class EnvironmentSpawner : MonoBehaviour
         int topOrBottom = Random.Range(0, 2);
         if (topOrBottom == 0)
         {
-            var fishy = Instantiate(fish, topSpawn.position, Quaternion.identity);
+            var fishy = Instantiate(underwater[Random.Range(0, underwater.Length)], topSpawn.position, Quaternion.identity);
             fishy.transform.position = new Vector3(fishy.transform.position.x + Random.Range(-3, 3),
                 fishy.transform.position.y + Random.Range(-3, 3),
                 fishy.transform.position.z + Random.Range(-3, 3));
         }
         else
         {
-            var fishy = Instantiate(fish, bottomSpawn.position, Quaternion.identity);
+            var fishy = Instantiate(underwater[Random.Range(0, underwater.Length)], bottomSpawn.position, Quaternion.identity);
             
             fishy.transform.position = new Vector3(fishy.transform.position.x + Random.Range(-3, 3),
                 fishy.transform.position.y + Random.Range(-3, 3),
