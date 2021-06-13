@@ -77,7 +77,11 @@ public class LogController : MonoBehaviour
         heartRenderers[0].color = new Color(1, 1, 1, 1);
         heartRenderers[1].color = new Color(1, 1, 1, 1);
         heartRenderers[1].sprite = emptyHeartSprite;
-        if (lives == 0) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (lives == 0)
+        {
+            FindObjectOfType<GameOverPanelController>().GameOver(isTop);
+            return;
+        }
         fadeLoopCount = 0;
         StartCoroutine("FadeImage", true);
         StartCoroutine("FadeHearts", 3f);
