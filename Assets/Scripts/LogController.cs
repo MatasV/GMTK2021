@@ -29,7 +29,8 @@ public class LogController : MonoBehaviour
     public Sprite emptyHeartSprite;
 
     public ParticleSystem particles;
-    
+
+    public Animator anim;
     private void Update()
     {
         if (playerPosition.localPosition.x < 0 && transform.rotation.z < maxZRotation)
@@ -82,6 +83,7 @@ public class LogController : MonoBehaviour
             FindObjectOfType<GameOverPanelController>().GameOver(isTop);
             return;
         }
+        anim.SetBool("broken", true);
         fadeLoopCount = 0;
         StartCoroutine("FadeImage", true);
         StartCoroutine("FadeHearts", 3f);

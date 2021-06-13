@@ -918,6 +918,7 @@ MonoBehaviour:
   - {fileID: 1056107351}
   emptyHeartSprite: {fileID: -409718518109422089, guid: 50332db6c29b1524e88d1d5a43175e7d, type: 3}
   particles: {fileID: 352531379}
+  anim: {fileID: 352531374}
 --- !u!95 &352531374
 Animator:
   serializedVersion: 3
@@ -7379,6 +7380,7 @@ GameObject:
   - component: {fileID: 784296956}
   - component: {fileID: 784296962}
   - component: {fileID: 784296958}
+  - component: {fileID: 784296963}
   m_Layer: 0
   m_Name: Log 2
   m_TagString: Log
@@ -7440,6 +7442,7 @@ MonoBehaviour:
   - {fileID: 101659515}
   emptyHeartSprite: {fileID: -409718518109422089, guid: 50332db6c29b1524e88d1d5a43175e7d, type: 3}
   particles: {fileID: 784296958}
+  anim: {fileID: 784296963}
 --- !u!198 &784296958
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -12358,6 +12361,25 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!95 &784296963
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784296955}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 620bac3859f956b479bbf0c871245b28, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &809263899
 GameObject:
   m_ObjectHideFlags: 0
