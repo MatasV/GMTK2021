@@ -13959,6 +13959,7 @@ MonoBehaviour:
   - {fileID: 5059562209708344323, guid: c1044efefc7eb78498b3441759da5381, type: 3}
   - {fileID: 5059562209708344323, guid: 153b72ac924698a479a2d507a5c11b2e, type: 3}
   - {fileID: 5059562209708344323, guid: be3e75aa7aa3c5d449533ade172389e7, type: 3}
+  - {fileID: 5059562209708344323, guid: 080c17f14c79c064ab233743ee946ae0, type: 3}
   grass: {fileID: 2577660271183324791, guid: 8b502ab45aac3194a8a79adbed427682, type: 3}
   grassSpawnRate: 4
 --- !u!4 &1145512517
@@ -14408,6 +14409,18 @@ PrefabInstance:
     - target: {fileID: 3278749013136019804, guid: ac8992fb17679854fb24c6402a7c2821, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3278749013136019805, guid: ac8992fb17679854fb24c6402a7c2821, type: 3}
+      propertyPath: mine
+      value: 
+      objectReference: {fileID: 7948557291233173993, guid: c558519b62678d64d8f12c7b3351e9b0, type: 3}
+    - target: {fileID: 3278749013136019805, guid: ac8992fb17679854fb24c6402a7c2821, type: 3}
+      propertyPath: mineTime
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 3278749013136019805, guid: ac8992fb17679854fb24c6402a7c2821, type: 3}
+      propertyPath: mineTimer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3278749013136019805, guid: ac8992fb17679854fb24c6402a7c2821, type: 3}
       propertyPath: enemies.Array.size

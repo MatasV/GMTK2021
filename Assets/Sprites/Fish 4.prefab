@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 8890624968099101544}
   - component: {fileID: 3558891199111572099}
   - component: {fileID: 6924614107460043783}
+  - component: {fileID: 1480141427}
   m_Layer: 0
-  m_Name: Fish 3
+  m_Name: Fish 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5059562209708344323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.95, y: -1.91, z: 0}
-  m_LocalScale: {x: 2.457086, y: 2.457086, z: 2.457086}
+  m_LocalScale: {x: 1.5920268, y: 1.5920268, z: 1.5920268}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -6
-  m_Sprite: {fileID: 21300000, guid: 7ae4e95257239c142b462e9343f33a13, type: 3}
-  m_Color: {r: 0.31132078, g: 0.3069153, b: 0.3069153, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 19c0af80824bc2c48a42bfa44cccdee5, type: 3}
+  m_Color: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,4 +97,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.6
-  destroyTime: 100
+  destroyTime: 1000
+--- !u!114 &1480141427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5059562209708344323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ea34ceefca9234ab0ef7c905440f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 3
+  timer: 0

@@ -69,16 +69,16 @@ public class LogController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void Hit()
+    public void Hit(int damage)
     {
         //change sprite
         if (invincible) return;
         particles.Play();
-        lives--;
+        lives-=damage;
         heartRenderers[0].color = new Color(1, 1, 1, 1);
         heartRenderers[1].color = new Color(1, 1, 1, 1);
         heartRenderers[1].sprite = emptyHeartSprite;
-        if (lives == 0)
+        if (lives <= 0)
         {
             FindObjectOfType<GameOverPanelController>().GameOver(isTop);
             return;

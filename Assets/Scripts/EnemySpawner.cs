@@ -14,6 +14,10 @@ public class EnemySpawner : MonoBehaviour
     private float timeStart = 0;
     public float timeLim;
 
+    public GameObject mine;
+
+    public float mineTime;
+    public float mineTimer;
     void Start()
     {
         Time.timeScale = 1;
@@ -23,6 +27,12 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         timeStart += Time.deltaTime;
+        mineTimer += Time.deltaTime;
+        if (mineTimer > mineTime)
+        {
+            SpawnMine();
+            mineTimer = 0;
+        }
         if(timeStart > timeLim)
         {
             SpawnEnemyBot();
@@ -33,31 +43,35 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    private void SpawnMine()
+    {
+        int spawnIndexB = Random.Range(3, spawnPoints.Length);
+        Instantiate(mine, spawnPoints[spawnIndexB].position, Quaternion.identity, spawnPoints[spawnIndexB]);
+
+        int spawnIndexT = Random.Range(0, spawnPoints.Length - 3);
+        Instantiate(mine, spawnPoints[spawnIndexT].position, Quaternion.identity, spawnPoints[spawnIndexT]);
+    }
+
     public void SpawnEnemyTop()
     {
         int enemyIndex = Random.Range(0, enemies.Length);
         int spawnIndexT = Random.Range(0, spawnPoints.Length - 3);
             Instantiate(enemies[enemyIndex], spawnPoints[spawnIndexT].position, Quaternion.identity, spawnPoints[spawnIndexT]);
-            transform.localPosition = Vector3.zero;     
-
     }
     public void SpawnEnemyBot()
     {
         int enemyIndex = Random.Range(0, enemies.Length);
         int spawnIndexB = Random.Range(3, spawnPoints.Length);
             Instantiate(enemies[enemyIndex], spawnPoints[spawnIndexB].position, Quaternion.identity, spawnPoints[spawnIndexB]);
-            transform.localPosition = Vector3.zero;  
     }
     public void SpawnBottomCoin()
     {
         int spawnIndexC = Random.Range(2, coinPoints.Length);
         Instantiate(bottomCoin, coinPoints[spawnIndexC].position, Quaternion.identity, coinPoints[spawnIndexC]);
-        transform.localPosition = Vector3.zero;
     }
     public void SpawnTopCoin()
     {
         int spawnIndexC = Random.Range(0, coinPoints.Length - 2);
         Instantiate(topCoin, coinPoints[spawnIndexC].position, Quaternion.identity, coinPoints[spawnIndexC]);
-        transform.localPosition = Vector3.zero;
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public float movementSpeed;
+
+    public bool instaKill;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,8 @@ public class EnemyMovement : MonoBehaviour
         }
         if (other.gameObject.tag.Equals("Log"))
         {
-            other.gameObject.GetComponent<LogController>().Hit();
+            if(instaKill) {other.gameObject.GetComponent<LogController>().Hit(2);}
+            else {other.gameObject.GetComponent<LogController>().Hit(1);}
             FindObjectOfType<AudioManager>().Play("Hit");
             Destroy(this.gameObject);
         }
